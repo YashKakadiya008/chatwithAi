@@ -53,7 +53,7 @@ function Chat() {
           return;
         }
         
-        const response = await axios.get('http://localhost:3000/api/chat/history', {
+        const response = await axios.get('https://chatwithai-g0ug.onrender.com/api/chat/history', {
           headers: { 
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -222,7 +222,7 @@ function Chat() {
     
     try {
       const token = localStorage.getItem('token');
-      await axios.delete('http://localhost:3000/api/chat/history', {
+      await axios.delete('https://chatwithai-g0ug.onrender.com/api/chat/history', {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -285,7 +285,7 @@ function Chat() {
       console.log('Making API request with token:', token);
       
       const response = await axios.post(
-        'http://localhost:3000/api/chat/generate', 
+        'https://chatwithai-g0ug.onrender.com/api/chat/generate', 
         { question: userInput },
         { 
           headers: { 

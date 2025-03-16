@@ -21,7 +21,7 @@ export function AuthProvider({ children }) {
           // Configure axios
           axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
           
-          const res = await axios.get('http://localhost:3000/api/auth/me');
+          const res = await axios.get('https://chatwithai-g0ug.onrender.com/api/auth/me');
           setUser(res.data);
         } catch (error) {
           console.error('Failed to load user:', error);
@@ -39,7 +39,7 @@ export function AuthProvider({ children }) {
   // Register user
   const register = async (name, email, password) => {
     try {
-      const res = await axios.post('http://localhost:3000/api/auth/register', {
+      const res = await axios.post('https://chatwithai-g0ug.onrender.com/api/auth/register', {
         name,
         email,
         password
@@ -60,7 +60,7 @@ export function AuthProvider({ children }) {
   // Login user
   const login = async (email, password) => {
     try {
-      const res = await axios.post('http://localhost:3000/api/auth/login', {
+      const res = await axios.post('https://chatwithai-g0ug.onrender.com/api/auth/login', {
         email,
         password
       });
